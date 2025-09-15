@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Sonare</title>
+
+  <!-- CSS Bootstrap, Font Awesome e Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Estilos personalizados -->
+  <style>
+    body {
+      background-color: #4a0f0f;
+      color: #d9bfa5;
+    }
+
+    h1 {
+      color: rgba(204, 190, 167, 1);
+    }
+
+    .hero {
+      background: url(imagens/backgroud1.jpg) center center/cover no-repeat;
+      min-height: 100vh;
+      padding-top: 100px;
+      padding-bottom: 50px;
+    }
+
+    .card-genre {
+      background-color: rgba(204, 190, 167, 1);
+      border-radius: 15px;
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .card-genre:hover {
+      transform: scale(1.05);
+    }
+
+    .card-genre img {
+      height: 250px;
+      object-fit: cover;
+    }
+
+    #rock {
+      background: url(imagens/Rockbackgroud.jpg) center center/cover no-repeat;
+      min-height: 100vh;
+      padding-top: 100px;
+      padding-bottom: 50px;
+    }
+
+    .button {
+      background-color: rgba(204, 190, 167, 1);
+    }
+
+    .sentimento img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      transition: transform 0.3s ease;
+    }
+
+    .sentimento img:hover {
+      transform: scale(1.1);
+    }
+
+    .sentimento p {
+      margin-top: 10px;
+      font-weight: 500;
+    }
+
+    #logo {
+      width: 70px;
+      height: 70px;
+    }
+
+    #eletronica,
+    #latina {
+      width: 600px;
+      height: 300px;
+    }
+
+    .hor{
+      width: 100%;
+    }
+    
+    .btn  {
+      margin-top: auto;   /* força descer para o fim */
+      padding: 10px 20px;
+      background-color: beige;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <img src="imagens/logo.png.png" id="logo" alt="Logo Sonare">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+        aria-controls="menu" aria-expanded="false" aria-label="Menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Rock</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Jazz</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Samba</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">MPB</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+        </ul>
+        <form class="d-flex ms-3">
+          <input class="form-control form-control-sm me-2" type="search" placeholder="Buscar">
+          <button class="btn btn-outline-light btn-sm" type="submit">🔍</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero d-flex align-items-center text-center mb-5">
+    <div class="container">
+      <h1>Onde cada batida vira emoção e cada nota conta uma história.</h1>
+      <div class="row my-5 justify-content-center">
+        <!-- Card Jazz -->
+        <div class="col-md-3">
+          <div class="card card-genre">
+            <img src="imagens/Jazz1.jpg" class="card-img-top" alt="Jazz">
+            <audio controls>
+              <source src="musicas/Jazz.mp3" type="audio/mpeg">
+            </audio>
+            <div class="card-body text-center">
+              <h5 class="card-title">Jazz</h5>
+            </div>
+          </div>
+        </div>
+        <!-- Card Samba -->
+        <div class="col-md-3">
+          <div class="card card-genre">
+            <img src="imagens/Samba1.jpg" class="card-img-top" alt="Samba">
+            <audio controls>
+              <source src="musicas/Vida Leve.mp3" type="audio/mpeg">
+            </audio>
+            <div class="card-body text-center">
+              <h5 class="card-title">Samba</h5>
+            </div>
+          </div>
+        </div>
+        <!-- Card Metal -->
+        <div class="col-md-3">
+          <div class="card card-genre">
+            <img src="imagens/rock1.jpg" class="card-img-top" alt="Rock">
+            <audio controls>
+              <source src="musicas/Metal.mp3" type="audio/mpeg">
+            </audio>
+            <div class="card-body text-center">
+              <h5 class="card-title">Metal</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Gêneros musicais -->
+  <section class="text-center my-5" id="genero">
+    <div class="container">
+      <h1>Ouça por gênero</h1>
+
+      <!-- Primeira linha -->
+      <div class="row mt-5 justify-content-center">
+        <div class="col-md-3">
+          <div class="card card-genre">
+            <img src="imagens/rock.jpg" class="card-img-top" alt="Rock">
+            <audio controls>
+              <source src="musicas/Metal.mp3" type="audio/mpeg">
+            </audio>
+            <div class="card-body text-center">
+              <h5 class="card-title">Rock</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card card-genre">
+            <img src="imagens/pop.jpg" class="card-img-top" alt="Pop">
+            <audio controls>
+              <source src="musicas/Pop.mp3" type="audio/mpeg">
+            </audio>
+            <div class="card-body text-center">
+              <h5 class="card-title">Pop</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card card-genre">
+            <img src="imagens/raphiphop.jpg" class="card-img-top" alt="Rap e Hip-Hop">
+            <audio controls>
+              <source src="musicas/RAP.mp3" type="audio/mpeg">
+            </audio>
+            <div class="card-body text-center">
+              <h5 class="card-title">Rap e Hip-Hop</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card card-genre">
+            <img src="imagens/jazz2.jpg" class="card-img-top" alt="Jazz e Clássicas">
+            <audio controls>
+              <source src="musicas/Jazz.mp3" type="audio/mpeg">
+            </audio>
+            <div class="card-body text-center">
+              <h5 class="card-title">Jazz e Clássicas</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Segunda linha -->
+      <div class="row mt-5 justify-content-center">
+        <div class="col-md-3">
+          <div class="card card-genre">
+            <img src="imagens/MPB.jpg" class="card-img-top" alt="MPB">
+            <audio controls>
+              <source src="musicas/Cores do Meu Brasil.mp3" type="audio/mpeg">
+            </audio>
+            <div class="card-body text-center">
+              <h5 class="card-title">MPB</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card card-genre">
+            <img src="imagens/Pagode.jpg" class="card-img-top" alt="Pagode">
+            <audio controls>
+              <source src="musicas/Vida Leve.mp3" type="audio/mpeg">
+            </audio>
+            <div class="card-body text-center">
+              <h5 class="card-title">Pagode</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card card-genre">
+            <img src="imagens/Forro.jpg" class="card-img-top" alt="Forró">
+            <audio controls>
+              <source src="musicas/Country.mp3" type="audio/mpeg">
+            </audio>
+            <div class="card-body text-center">
+              <h5 class="card-title">Forró</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card card-genre">
+            <img src="imagens/sertanejo.jpg" class="card-img-top" alt="Sertanejo">
+            <audio controls>
+              <source src="musicas/Modao.mp3" type="audio/mpeg">
+            </audio>
+            <div class="card-body text-center">
+              <h5 class="card-title">Sertanejo e Modão</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cards grandes: Eletrônica e Latina -->
+      <div class="row justify-content-center ms-3x">
+        <div class="col-md-6 g-4">
+          <div class="card card-genre my-5" id="eletronica">
+            <img src="imagens/eletronica1.jpg" class="card-img-top" alt="Eletrônica">
+            <audio class="hor" controls>
+              <source src="musicas/Eletronica.mp3" type="audio/mpeg">
+            </audio>
+            <div class="card-body text-center">
+              <h5 class="card-title">Eletrônica</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 g-4">
+          <div class="card card-genre my-5" id="latina" >
+            <img src="imagens/latina.jpg"  class="card-img-top" alt="Latina">
+            <audio class="hor" controls>
+              <source src="musicas/Liberdade Ardente.mp3" style="width: 100%;" type="audio/mpeg">
+            </audio>
+            <div class="card-body text-center">
+              <h5 class="card-title">Latina</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Rock -->
+  <section>
+    <div class="container-fluid text-center" id="rock">
+      <div class="container my-5">
+        <h1>Ouça o melhor do Rock</h1>
+        <button id="btnPlay" type="button" class="btn" onclick="playMusic1"  ()>Clicando aqui!</button>
+        <audio id="rockPlayer" src="musicas/rockmelhor.mp3"></audio>
+      </div>
+    </div>    
+  </section>
+
+  <!-- Sentimentos -->
+  <section>
+    <div class="container text-center py-5">
+      <h2 class="mb-5">Ouça por sentimentos</h2>
+      <div class="container">
+       
+        <div class="row justify-content-center">
+          
+          <!-- Felicidade -->
+          <div class="col-6 col-md-3 sentimento">
+            <img src="imagens/Felicidade.jpg" class="circle-img" onclick="playMusic('felicidade')" alt="Felicidade">
+            <p>Felicidade</p>
+          </div>
+    
+          <!-- Euforia -->
+          <div class="col-6 col-md-3 sentimento">
+            <img src="imagens/euforia.jpg" class="circle-img" onclick="playMusic('euforia')" alt="Euforia">
+            <p>Euforia</p>
+          </div>
+    
+          <!-- Nostalgia -->
+          <div class="col-6 col-md-3 sentimento">
+            <img src="imagens/nostalgia.jpg" class="circle-img" onclick="playMusic('nostalgia')" alt="Nostalgia">
+            <p>Nostalgia</p>
+          </div>
+    
+          <!-- Raiva -->
+          <div class="col-6 col-md-3 sentimento">
+            <img src="imagens/raiva.jpg" class="circle-img" onclick="playMusic('raiva')" alt="Raiva">
+            <p>Raiva</p>
+          </div>
+        </div>
+    
+        <div class="row justify-content-center">
+          <!-- Superação -->
+          <div class="col-6 col-md-3 sentimento">
+            <img src="imagens/Superação.jpg" class="circle-img" onclick="playMusic('superacao')" alt="Superação">
+            <p>Superação</p>
+          </div>
+    
+          <!-- Solidão -->
+          <div class="col-6 col-md-3 sentimento">
+            <img src="imagens/solidao.jpg" class="circle-img" onclick="playMusic('solidao')" alt="Solidão">
+            <p>Solidão</p>
+          </div>
+    
+          <!-- Paz -->
+          <div class="col-6 col-md-3 sentimento">
+            <img src="imagens/Paz.jpg" class="circle-img" onclick="playMusic('paz')" alt="Paz">
+            <p>Paz</p>
+          </div>
+    
+          <!-- Amor -->
+          <div class="col-6 col-md-3 sentimento">
+            <img src="imagens/amor.jpg  " class="circle-img" onclick="playMusic('amor')" alt="Amor">
+            <p>Amor</p>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Player escondido -->
+      <audio id="player" controls style="margin-top: 30px; display: none;"></audio>
+    
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <div class="container-fluid text-center py-5 bg-dark">
+      <div class="container">
+        <h1>
+          Voltar ao topo <a class="nav-link d-inline" href="inicio.html"><i class="bi bi-arrow-up-circle-fill"></i></a>
+        </h1>
+      </div>
+    </div>
+  </footer>
+</body>
+
+<script>
+  const player = document.getElementById("rockPlayer");
+  const btn = document.getElementById("btnPlay");
+
+  btn.addEventListener("click", () => {
+    if (player.paused) {
+      player.play();
+      btn.textContent = "⏸️ Pausar";
+    } else {
+      player.pause();
+      btn.textContent = "▶️ Tocar";
+    }
+  });
+</script>
+
+
+<script>
+  // Lista de músicas
+  const musicas = {
+    felicidade: "musicas/Felicidade.mp3 ",
+    euforia: "musicas/euforia.mp3",
+    nostalgia: "musicas/nostalgia.mp3",
+    raiva: "musicas/raiva.mp3",
+    superacao: "musicas/superacao.mp3",
+    solidao: "musicas/solidao.mp3",
+    paz: "musicas/paz.mp3",
+    amor: "musicas/amor.mp3"
+  };
+
+  function playMusic(sentimento) {
+    const player = document.getElementById("player");
+    player.src = musicas[sentimento];
+    player.style.display = "block"; // mostra o player
+    player.play();
+  }
+</script>
+
+</html>
